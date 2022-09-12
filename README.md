@@ -3,7 +3,7 @@
 > Status do Projeto: ⚠️ Em desenvolvimento.
 
 ## Informações gerais
-Uma plataforma de filmes com o framework django no backend.
+Uma plataforma de filmes com o framework django.
 
 ## Tecnologias
 > O projeto é criado com:
