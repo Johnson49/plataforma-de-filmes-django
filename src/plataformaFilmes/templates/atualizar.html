@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Filmes</title>
+</head>
+
+<style>
+     h1{
+        text-align: center;
+    }
+
+    body{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+     form{
+        margin-top: 1rem ;
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: .5rem;
+        margin-bottom: 30vh;
+
+    }
+    form input{
+        width: 50vw;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+      
+    }
+   form button{
+        padding: .7rem 0;
+    }
+</style>
+<body>
+    
+    <h1> {{ filme.titulo}}  ‧ {{filme.ano_lancamento}}  ‧ {{filme.genero}}</h1>
+
+    <form action=" {% url 'atualizar' filme.id %} " method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="título" value="{{filme.titulo}}" name="titulo">
+        <input type="text" placeholder="genero" value="{{filme.genero}}" name="genero">
+        <input type="text" placeholder="descrição" value="{{filme.descricao}}" name="descricao" >
+        <input type="text" placeholder="duração" value="{{filme.duracao}}" name="duracao">
+        <input type="number" placeholder="ano lançamento" value="{{filme.ano_lancamento}}" name="ano_lancamento" >
+        <input type="url" placeholder="url da imagem" value="{{filme.url_imagem}}" name="url_imagem">
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

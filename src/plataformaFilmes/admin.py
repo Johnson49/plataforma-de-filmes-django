@@ -4,7 +4,7 @@ from .models import Filme, Avaliacao
 
 @admin.register(Filme)
 class FilmeAdmin(admin.ModelAdmin):
-    list_display = ("titulo", "ano_lancamento", "duracao", "criacao", "atualizacao", "ativo")
+    list_display = ("titulo", "ano_lancamento", "duracao", "criacao", "ativo")
 
 
 

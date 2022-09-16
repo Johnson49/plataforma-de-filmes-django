@@ -1,49 +1,51 @@
 # Play  Filmes
 
-> Status do Projeto: ⚠️ Em desenvolvimento.
-
-## Informações gerais
 Uma plataforma de filmes com o framework django.
 
-## Tecnologias
-> O projeto é criado com:
+## Começando
 
-* Python 3.10
-* Django
+### 1. Crie um ambiente virtual 
 
-## Setup
+` pip -m venv venv`
 
-> Para rodar este projeto, clone localmente e depois instale as dependências com um gerenciador de sua preferência.
+<h4> Ative o ambiente virtual </h4>
 
-1. Clone este repositório  e `cd` no diretório do repositório
-2. Crie um ambiente virtual com o seguinte comando: `python -m venv venv`
-3. Instale as dependências com: `pip install -r requirements `
-4. Execute o servidor com : `python manage.py runserver`
+Linux ou Mac: `source venv/bin/activate`
 
-## Models
+Windows: `venv/Script/activate `
 
-### Filme
-- título 
-- gênero
-- descrição 
-- duração
-- ano de lançamento
-- url da imagem
+### 2. Clone o projeto e instale as dependências
+
+` git clone https://github.com/Johnson49/plataforma-de-filmes-django`
+
+<h4> Instale as dependências com o pip: </h4>
+
+` pip install -r requirements `
 
 
-### Avaliação do filme
-- filme 
-- nome do usuário
-- email do usuário
-- comentário
-- avaliação
+### 3. Crie o banco de dados
+
+<h4> Realize o makemigrations:</h4>
+
+`python manage.py makemigrations plataformaFilmes`
 
 
-## Planejamento
+<h4> E então a migrate:</h4>
 
-- [x] Criar a tabela de filme
-- [x] Criar a tabela de avaliações
-- [] Criar a tabela de usuarios
-- [] Definir as regras de negócios
-- [] Definir as regras de segurança
-- [] Integra Angular com django
+> Ao executar este comando, um arquivo de banco de dados SQLITE será criando na raiz do projeto.
+
+`python manage.py migrate`
+
+### 3. Crie um super usuário para acessar o painel administrativo
+
+` python manage.py createsuperuser `
+
+### 4. Inicie o servidor
+
+` python manage.py runserver `
+
+
+
+
+
+
